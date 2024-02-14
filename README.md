@@ -4,28 +4,47 @@ Accurately developed predictive model that ensures precise forecast of the order
 ![image](https://github.com/shivaniRaut/Sales-Forecasting-Analysis/assets/30024267/7a32dad3-2add-4fb9-829a-fc32ad58ccca)
 
 **Step 1:** In Use tables were found out from RaptorAPI codes : Entities - Repos (azure.com)
+
 EDI_INFORMATION
+
 RAPTOR2_ERROR_LOG_CURRENT
+
 FILES
+
 FLOW
+
 RAPTOR2_TRANSACTION
+
 RAPTOR2_TRANSACTION_STAGE
+
 RAPTOR2_TRANSACTION_STATS
+
 RAPTOR_SEARCH_FIELDS
+
 RAPTOR_SEARCH_PROFILE
+
 RAPTOR_TP_DOCUMENT
+
 SENDER_RECEIVER_DOCCODE_MV
+
 VISIBILITY_PARAMS
+
 TRANSACTION
 
 
-Other tables/view which will be useful for model:
+**Other tables/view which will be useful for model:**
+
 TPM_MASTER
+
 TPM_SNDR_RCVR
+
 TREADING_PARTNER
+
 RAPTOR_TRANSACTION_VIEW
+
 ![image](https://github.com/shivaniRaut/Sales-Forecasting-Analysis/assets/30024267/e2ca1145-0c91-40d1-afb4-ce65925d7293)
-Step 2: Understand the relationship between these Raptor tables
+
+**Step 2:** Understand the relationship between these Raptor tables
 ![image](https://github.com/shivaniRaut/Sales-Forecasting-Analysis/assets/30024267/5c92fba0-ba73-4c1b-ae22-b128ef69e77c)
 
 **Step 3:** Identify the Method to be followed for building ML
@@ -43,18 +62,19 @@ Then to count orders by hours, I grouped by source_insert_date hour and performe
 
 **PLAN:**
 
-1)	Looking at the data, we can perform time series forecast using Facebook Prophet including the holidays data. Also, we will try traditional ARIMA/SARIMA models for the forecasting. There is DeepAR+ Algorithm by Amazon which can be used as well to select the best model.
+**1)**	Looking at the data, we can perform time series forecast using Facebook Prophet including the holidays data. Also, we will try traditional ARIMA/SARIMA models for the forecasting. There is DeepAR+ Algorithm by Amazon which can be used as well to select the best model.
 ![image](https://github.com/shivaniRaut/Sales-Forecasting-Analysis/assets/30024267/9c2fbc4d-9d9f-49ba-9a9d-2c2ea08cb667)
 ![image](https://github.com/shivaniRaut/Sales-Forecasting-Analysis/assets/30024267/01e40c72-f7ae-4db5-9cb8-036f21358c29)
-![image](https://github.com/shivaniRaut/Sales-Forecasting-Analysis/assets/30024267/a94a141f-e17e-4a55-ba9a-7867853a825d)
-Customer Segmentation
+![Customer Segmentation](https://github.com/shivaniRaut/Sales-Forecasting-Analysis/assets/30024267/a94a141f-e17e-4a55-ba9a-7867853a825d)
+
 Note for Future: 
 If we get error log and error log specific to the flow, we can use that data for predicting maintenance in possible flows.
 
-2)	We could do customer segmentation to identify similar pattern customers and categorize them according to their behavior such as loyal customer, new customer or churned customer using RFM(Recency, Frequency, Monetary).
+**2)**	We could do customer segmentation to identify similar pattern customers and categorize them according to their behavior such as loyal customer, new customer or churned customer using RFM(Recency, Frequency, Monetary).
 ![image](https://github.com/shivaniRaut/Sales-Forecasting-Analysis/assets/30024267/26de1b58-7e4f-4bb3-86fc-d54078307be0)
 
 **Implementation**:
+
 **Objective:**
 1)	Identify TP <Sender,Receiver>
 2)	Identity Document <DocType>
